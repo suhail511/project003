@@ -14,10 +14,8 @@ let c1 = [];
 
 class circle{
 	constructor(){
-		this.radius=20;
-		this.x=50,this.y=0;
-		this.status = true;
-		this.score=0;
+		this.resetThis();
+
 	}
 	draw(){
 		fill(180);
@@ -26,7 +24,8 @@ class circle{
 	}
 	updateLoc(){
 		if(this.status==true)
-		this.y+=4;
+		this.y+=this.velocity;
+		this.velocity+=this.gravity;
 
 		if((this.y>myHeight || this.y<0) && this.status == true){
 			this.status=false;
@@ -34,9 +33,14 @@ class circle{
 			//message.colour(255);
 		}
 	}
+	jump(){
+		this.velocity=-7;
+	}
 	resetThis(){
 		this.radius=20;
-		this.x=50,this.y=0;
+		this.x=50,this.y=height/2;
+		this.velocity = 0;
+		this.gravity = 0.3;
 		this.status = true;
 		this.score=0;
 	}
@@ -45,7 +49,7 @@ class circle{
 function keyPressed(){
 	if(key ==' '){
 		if(c1[0].status == true)
-		c1[0].y-=20;
+		c1[0].jump();
 	}
 }
 
