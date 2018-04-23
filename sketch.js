@@ -14,19 +14,12 @@ var myWidth = 700, myHeight = 400;
 let c1 = [];
 let b1 = [];
 
-function keyPressed(){
-	if(key ==' '){
-		if(c1[0].status == true)
-		c1[0].jump();
-	}
-}
-
-function mousePressed(){
-	if(key ==' '){
-		if(c1[0].status == true)
-		c1[0].jump();
-	}
-}
+// function keyPressed(){
+// 	if(key ==' '){
+// 		if(c1[0].status == true)
+// 		c1[0].jump();
+// 	}
+// }
 
 function resetGame(){
 	background(255);
@@ -38,8 +31,6 @@ function resetGame(){
 }
 
 function setup() {
-	//createCanvas(windowWidth, windowHeight);
-
 	message1 = createP("");
 	message1.position(myWidth/2-50,myHeight/2+90);
 
@@ -65,32 +56,10 @@ function draw() {
 	background(255);
 
 	for(let i=0;i<(c1.length);i++){
+		c1[i].think(b1);
 		c1[i].draw();
 		c1[i].updateLoc();
 	}
 
 	updateBlocks();
-}
-
-function updateBlocks(){
-
-	for(let i=0;i<(b1.length);i++){
-
-		if(c1[0].status == true)
-			b1[i].updateLoc();
-
-
-		if(b1[b1.length-1].pos < myWidth - myWidth/NoOfBlocks){
-			let b = new block();
-			b1.push(b);
-		}
-
-		if(b1[0].status==false){
-			b1.shift();
-			b1[0].pos-=b1[0].velocity;
-		}
-		b1[i].draw();
-
-	}
-
 }

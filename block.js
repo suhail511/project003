@@ -33,3 +33,26 @@ class block{
 
 
 };
+
+function updateBlocks(){
+
+	for(let i=0;i<(b1.length);i++){
+
+		if(c1[0].status == true)
+			b1[i].updateLoc();
+
+
+		if(b1[b1.length-1].pos < myWidth - myWidth/NoOfBlocks){
+			let b = new block();
+			b1.push(b);
+		}
+
+		if(b1[0].status==false){
+			b1.shift();
+			b1[0].pos-=b1[0].velocity;
+		}
+		b1[i].draw();
+
+	}
+
+}
