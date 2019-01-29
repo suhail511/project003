@@ -17,42 +17,45 @@ class block{
     }
     if((this.pos<-this.width/2) && this.status == true){
       this.status=false;
-      console.log(this.status);
     }
   }
 
   resetThis(){
-    this.holeStart = random(1,myHeight*0.6);
-    this.holeEnd = this.holeStart+random(myHeight*0.2,myHeight*0.4);
+    this.holeStart = random(1,myHeight*0.5);
+    this.holeEnd = this.holeStart+random(myHeight*0.3,myHeight*0.5);
     this.width = 15;
     this.pos = myWidth+this.width/2;
     this.velocity = 5;
     this.status=true;
   }
 
-
-
 };
 
 function updateBlocks(){
 
-	for(let i=0;i<(b1.length);i++){
+  for(let i=0;i<(blocks.length);i++){
 
-		if(c1[0].status == true)
-			b1[i].updateLoc();
+    blocks[i].updateLoc();
 
 
-		if(b1[b1.length-1].pos < myWidth - myWidth/NoOfBlocks){
-			let b = new block();
-			b1.push(b);
-		}
+    if(blocks[blocks.length-1].pos < myWidth - myWidth/NoOfBlocks){
+      let b = new block();
+      blocks.push(b);
+    }
 
-		if(b1[0].status==false){
-			b1.shift();
-			b1[0].pos-=b1[0].velocity;
-		}
-		b1[i].draw();
+    if(blocks[0].status==false){
+      blocks.shift();
+      blocks[0].pos-=blocks[0].velocity;
+    }
+    blocks[i].draw();
 
-	}
+  }
 
+}
+
+function newBlocks(){
+  blocks = [];
+  let b = new block();
+  blocks.push(b);
+  return blocks;
 }
