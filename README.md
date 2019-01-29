@@ -22,7 +22,13 @@ These instructions will get you a copy of the project up and running on your loc
     ```
 ## Running
 
-Open the ```bash index.html ``` file on your browser. You should see the following in your browserscreen.
+Open the ```bash index.html ``` file on your browser. Use this to open in Chrome.
+
+```bash
+    open -a "Google Chrome" index.html
+```
+
+You should see the following in your browserscreen.
 
 ![](media/media01.gif)
 
