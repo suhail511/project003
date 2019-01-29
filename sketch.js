@@ -48,19 +48,20 @@ function setup() {
 	message1 = createP("");
 	message1.position(myWidth/2-50,myHeight/2+90);
 
-	canvas1 = createCanvas(myWidth, myHeight);
-	canvas1.style("border-style","solid");
-	canvas1.style("border-width","3px");
+
+
 
 	slider1 = createSlider(1,1000,1);
 	slider1.width = "100%";
-	message2 = createElement("p","Speed : " + slider1.value());
+	message2 = createElement("p","Move bar above to control Speed : " + slider1.value());
 	message3 = createElement("p","Generation : " + generationNumber);
 	message4 = createElement("p","Best Score : ");
 	message5 = createElement("p","Current Score : ");
 	message6 = createElement("p","Number of Circles alive : ");
 
-
+	canvas1 = createCanvas(myWidth, myHeight);
+	canvas1.style("border-style","solid");
+	canvas1.style("border-width","3px");
 	// button1 = createElement("Button","RESET");
 	// button1.style("font-size","150%");
 	// // button1.mousePressed(resetGame);
@@ -76,7 +77,7 @@ function setup() {
 function draw() {
 
 
-	message2.html("Speed : " + slider1.value());
+	message2.html("Move bar above to control Speed : " + slider1.value());
 	for(let k=0;k<slider1.value();k++){
 		background(255);
 		for(let j=c1.length-1;j>=0;j--){
