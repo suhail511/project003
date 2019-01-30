@@ -10,7 +10,7 @@ I ran it in google chrome, but any browser will do.
 
 ## Installation
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
+These instructions will get you a copy of the project up and running on your local machine. 
 
 1. Download and unzip [this entire repository from GitHub](https://github.com/suhail511/project003), either interactively, or by entering the following in your Terminal.
     ```bash
