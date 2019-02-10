@@ -1,3 +1,4 @@
+## [DEMO](https://suhail511.github.io/project003/) <- Click for Demo
 # Flappy Bird using Neuroevolution
 
 [Flappy Bird](https://en.wikipedia.org/wiki/Flappy_Bird) project, where the A.I. trains to get the maximum score. [Neuroevolution](https://en.wikipedia.org/wiki/Neuroevolution) is used, Where each new generation is produced by stochastically removing less desired solutions, and introducing small random changes (Mutations). It is inspired by [Biological Evolution.](https://en.wikipedia.org/wiki/Evolution)
